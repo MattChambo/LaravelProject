@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Intervention\Image\ImageManager;
 use App\Products;
 
 class ShopController extends Controller
@@ -31,6 +32,15 @@ class ShopController extends Controller
         $newProduct->description = $request->description;
         $newProduct->price = $request->product_price;
         $newProduct->quantity = $request->product_quantity;
+
+        $manager = new ImageManager();
+
+        $folder="./images/Products";
+        $imagename = preg_replace("/[^0-9a-zA-Z]/", "", $request->title);
+
+        $productImage = $manager->make($request->product_image);
+        $productImage->fit(100, 100);
+        $productImage->save($folder.'/'.$imagename.'.jpg', 100);
 
         // $newProduct->save();
         return redirect('/Shop');
