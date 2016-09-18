@@ -27,8 +27,8 @@
 
 	<div class="form-group {{ $errors->has('product-description')? 'has-error' :'' }}">
 		<label>Product Description</label>
-		<textarea name="product-description" class="form-control" placeholder="Product description" row="5">{{ old('product-description') }}</textarea>
-		{!!$errors->first('product-description','<span class="help-block">:message</span>')  !!}
+		<textarea name="product_description" class="form-control" placeholder="Product description" row="5">{{ old('product_description') }}</textarea>
+		{!!$errors->first('product_description','<span class="help-block">:message</span>')  !!}
 	</div>
 	<div class="form-group {{ $errors->has('product_image')? 'has-error' :'' }}">
 		<label>Product image</label>
