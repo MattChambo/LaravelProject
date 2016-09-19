@@ -21,6 +21,15 @@
 	<h2>${{$product->price}}</h2>
 	<p>{{$product->description}}</p>
 </div>
+
+<form action="" method="post">
+	<select name="size">
+		<option value="sm">Small</option>
+	</select>
+	<input type="number" name="quantity" min="0" max="10">
+	<button type="submit">Add to cart</button>
+</form>
+
 @endsection
 
 @section('scripts')
