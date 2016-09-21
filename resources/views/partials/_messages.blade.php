@@ -5,3 +5,15 @@
 </div>
 
 @endif
+
+@if(Session::has('LowStock'))
+<div class="alert alert-danger" role="alert">
+	<strong>Error:</strong>{{ Session::get('LowStock')}}
+</div>
+@endif
+
+@if(Session::has('RemoveCart'))
+<div class="alert alert-danger" role="alert">
+	{{ Session::get('RemoveCart')}}
+</div>
+@endif

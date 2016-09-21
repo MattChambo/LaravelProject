@@ -23,7 +23,7 @@ Route::post('Shop/{id}/update', 'ShopController@update')->middleware('auth');
 Route::get('About', 'AboutController@index');
 Route::get('Cart', 'CartController@index')->middleware('auth');
 Route::post('Cart/Add/{id}', 'CartController@add')->middleware('auth');
-
+Route::get('Cart/Remove/{id}', 'CartController@remove')->middleware('auth');
 Route::get('Contact', 'ContactController@index');
 
 

@@ -101,7 +101,7 @@ class ShopController extends Controller
         });
         $productImage->save($folder.'/'.$imagename.'.jpg', 100);
 
-        $Product->image = $imagename.'.jpg';
+        $product->image = $imagename.'.jpg';
 
         }
 
