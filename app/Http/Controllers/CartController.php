@@ -16,7 +16,8 @@ class CartController extends Controller
     	$UserID = \Auth::user()->id;
     	$user = User::where('id', '=', $UserID)->firstOrFail();
     	$Cart = $user->Usercart;
-    	return view('cart.index', compact('Cart'));
+        $Grandtotal = $user->UserCart->sum('subtotal');
+    	return view('cart.index', compact('Cart', 'Grandtotal'));
 
     }
 

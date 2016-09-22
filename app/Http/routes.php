@@ -26,6 +26,8 @@ Route::post('Cart/Add/{id}', 'CartController@add')->middleware('auth');
 Route::get('Cart/Remove/{id}', 'CartController@remove')->middleware('auth');
 Route::get('Contact', 'ContactController@index');
 
+Route::get('Checkout/{id}', 'CheckoutController@index')->middleware('auth');
+Route::post('Checkout/{id}/Transaction', 'CheckoutController@transaction')->middleware('auth');
 
 Route::auth();
 
